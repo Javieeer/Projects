@@ -1,0 +1,27 @@
+main {
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+main .form {
+    display: flex;
+}
+
+main ul {
+    display: flex;
+    flex-direction: column;
+}
+
+main ul h4 {
+    align-self: center;
+}
+
+main ul li {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100vh;
+}
