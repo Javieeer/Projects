@@ -21,7 +21,22 @@ main ul h4 {
 
 main ul li {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     width: 100vh;
+}
+
+main ul li .inputs {
+    display: flex;
+    width: 50%;
+    justify-content: space-between;
+}
+
+main ul li .completa {
+    text-decoration: line-through;
+}
+
+main ul li input {
+    display: flex;
+    align-self: center;
 }
