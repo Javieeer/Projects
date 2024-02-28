@@ -3,26 +3,26 @@ import "./app.css"
 
 export default function App() {
 
-    const APIKEY = '3LntW8yZBsURofIO'
-
-    const [place, setPlace] = useState('')
     const [name, setName] = useState('')
     const [weather, setWeather] = useState(0)
     const [humidity, setHumidity] = useState(0)
     const [windSpeed, setWindSpeed] = useState(0)
+    const [place, setPlace] = useState('')
+    const [weatherinfo, setWeatherInfo] = useState({})
 
-    const getWeather = () => {
+    const getWeather = async () => {
         
-        const where = encodeURIComponent(place)
-        const URL_COORDENATES = `https://nominatim.openstreetmap.org/search?q=${where}&format=json`
-        fetch(URL_COORDENATES)
-        .then(response => {
+        try {
+
+            const where = encodeURIComponent(place)
+            const APIKEY = '3LntW8yZBsURofIO'
+            const URL_COORDENATES = `https://nominatim.openstreetmap.org/search?q=${where}&format=json`
+            
+            const response = await fetch(URL_COORDENATES)
             if (!response.ok) {
                 throw new Error('The endpoint was not response properly')
             }
-            return response.json()
-        })
-        .then(data => {
+            const data = await response.json()
             if (data.length > 0) {
                 const primerResultado = data[0]
                 const latitude = primerResultado.lat
@@ -33,36 +33,31 @@ export default function App() {
                 const URL_WEATHER_COMPLETE = `https://my.meteoblue.com/packages/basic-day_webcolors?lat=${latitude}&lon=${longitud}&name=${nameUrl}&windspeed=kmh&apikey=${APIKEY}`
                 const URL_WEATHER_SIMPLE = `https://my.meteoblue.com/packages/current?lat=${latitude}&lon=${longitud}&apikey=${APIKEY}`
                 
-                fetch(URL_WEATHER_COMPLETE)
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error('It could not reach the weather API')
-                    }
-                    return response.json()
-                })
-                .then(data => {
-                    setHumidity(data.data_day.relativehumidity_mean[0])
-                    fetch(URL_WEATHER_SIMPLE)
-                    .then(response => {
-                        if (!response.ok) {
-                            throw new Error('There was a problem with the conexion')
-                        }
-                        return response.json()
-                    })
-                    .then(data => {
-                        setWeather(data.data_current.temperature)
-                        setWindSpeed(data.data_current.windspeed)
-                    })
-                })
+                const weatherResponse = await fetch(URL_WEATHER_COMPLETE)
+                if (!weatherResponse.ok) {
+                    throw new Error('It could not reach the weather API')
+                }
+                const weatherData = await weatherResponse.json()
+                setHumidity(weatherData.data_day.relativehumidity_mean[0])
+                const simpleWeatherResponse = await fetch(URL_WEATHER_SIMPLE)
+                if (!simpleWeatherResponse.ok) {
+                    throw new Error('There was a problem with the conexion')
+                }
+                const simpleWeatherData = await simpleWeatherResponse.json()
+                setWeather(simpleWeatherData.data_current.temperature)
+                setWindSpeed(simpleWeatherData.data_current.windspeed)
             }
-        })
-        .catch(error => {
+        }
+        catch (error) {
             console.error('there has been a problem with your requirement: ', error)
-        })
+            
+        }
     }
 
     const handleClick = () => {
         getWeather()
+        const text = document.getElementById('where')
+        text.value = ''
     }
 
     return (
@@ -72,7 +67,7 @@ export default function App() {
                 <h4>Type the location from where you want to know the weather</h4>
             </header>
             <section className="inputs">
-                <input type="text" onChange={(e) => setPlace(e.target.value)} placeholder="City, Country, Adress"/>
+                <input type="text" id="where" onChange={(e) => setPlace(e.target.value)} placeholder="City, Country, Adress"/>
                 <button onClick={handleClick}>Consult weather</button>
             </section>
             <section className="answer">
