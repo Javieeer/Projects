@@ -1,23 +1,7 @@
-import { useState } from 'react'
-import CryptoJS from 'crypto-js'
 import './app.css'
+import UserCard  from './components/usercard'
 
 export default function App() {
-    
-    const UserCard = ({ nombre, email, description } ) => {
-        return (
-            <section className="userCard">
-                <section className="userCard-picture">
-                    <img src={`https://unavatar.io/instagram/${nombre}`} alt="" />
-                </section>
-                <section className="userCard-details">
-                    <h4 className="userCard-details-nombre">{nombre}</h4>
-                    <p className="userCard-details-email">{email}</p>
-                    <p className="userCard-details-description">{description}</p>
-                </section>
-            </section>
-        )
-    }
 
     return (
         <main>

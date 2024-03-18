@@ -1,0 +1,14 @@
+main {
+    display: flex;
+    flex-direction: column;
+}
+
+section form {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    .confirm {
+        grid-column: 1/5;
+        margin-top: 10px;
+    }
+}

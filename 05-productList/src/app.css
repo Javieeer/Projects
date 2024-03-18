@@ -1,0 +1,26 @@
+.productList {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.productList-body {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.productList-body-product {
+    width: 150px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgb(78, 78, 78);
+    border-radius: 15px;
+    padding: 15px;
+}
+
+.productList-body-product img, h4, p {
+    margin: 0;
+}
