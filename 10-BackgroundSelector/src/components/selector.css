@@ -1,0 +1,51 @@
+/* Contenedor del switch */
+.switch-container {
+    position: relative;
+    display: inline-block;
+    width: 60px; /* Ancho del switch */
+    height: 34px; /* Altura del switch */
+  }
+  
+  /* El switch (checkbox oculto) */
+  .switch-container input[type="checkbox"] {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  /* El slider (label) */
+  .switch-label {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc; /* Color de fondo cuando está desactivado */
+    transition: 0.4s; /* Animación suave al cambiar */
+    border-radius: 34px; /* Bordes redondeados */
+  }
+  
+  /* El círculo dentro del slider */
+  .switch-label::before {
+    position: absolute;
+    content: "";
+    height: 26px; /* Altura del círculo */
+    width: 26px; /* Ancho del círculo */
+    left: 4px; /* Espacio desde el lado izquierdo */
+    bottom: 4px; /* Alineación vertical */
+    background-color: white; /* Color del círculo */
+    transition: 0.4s; /* Animación suave al cambiar */
+    border-radius: 50%; /* Hacerlo circular */
+  }
+  
+  /* Estilo cuando el checkbox está marcado (activado) */
+  .switch-container input:checked + .switch-label {
+    background-color: #2196F3; /* Color de fondo cuando está activado */
+  }
+  
+  /* Mover el círculo hacia la derecha cuando está activado */
+  .switch-container input:checked + .switch-label::before {
+    transform: translateX(26px); /* Mover hacia la derecha */
+  }
+  

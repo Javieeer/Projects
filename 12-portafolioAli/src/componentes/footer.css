@@ -1,0 +1,57 @@
+/* Contenedor principal */
+footer {
+  width: 100%;
+  margin: 0;
+  padding: 20px 0; 
+  background-color: rgb(234, 234, 234);
+  text-align: center;
+  box-sizing: border-box; 
+}
+
+/* Títulos dentro del footer */
+footer h3 {
+  margin: 0;
+  font-size: 1.2em;
+}
+
+/* Contenedor de reloj */
+.clock1 {
+  display: flex;
+  flex-direction: column; 
+  align-items: center;
+  /* Línea divisoria */
+  border-top: 1px solid #ccc;
+}
+
+.clock2 {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Sección de enlaces sociales */
+.social-links {
+  margin: 0;
+  padding: 20px; 
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Estilo para los círculos sociales */
+.social-circle {
+  /* Espaciado entre los círculos */
+  margin: 10px; 
+}
+
+/* Sección de derechos de autor */
+.copyright {
+  width: 100%;
+  display: flex;
+  justify-content: center; 
+  font-size: 0.9em; 
+}
+
+.copyright a {
+  color: black;
+  text-decoration: none;
+}

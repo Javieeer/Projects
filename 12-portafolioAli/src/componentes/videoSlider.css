@@ -1,0 +1,62 @@
+/* Contenedor principal del slider de video */
+.contenedorvideo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  box-sizing: border-box;
+  padding-bottom: 20px;
+  position: relative;
+}
+
+/* Texto sobre el slider de video */
+.contenedorvideo .texto {
+  display: flex;
+  padding-left: 10px; 
+  letter-spacing: 1px; 
+  text-transform: uppercase;
+  font-size: 0.4em; 
+  gap: 10px; 
+  color: black;
+}
+
+/* Texto complementario */
+.contenedorvideo .texto .complemento {
+  color: gray;
+}
+
+/* Contenedor del video */
+.video-container {
+  position: relative;
+  height: 90vh; 
+  overflow: hidden; 
+}
+
+/* Estilo para el video dentro del contenedor */
+.video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Botón para mutear */
+.mute-button {
+  position: absolute;
+  top: 20px; 
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: transform 0.3s, opacity 0.3s;
+  opacity: 0; 
+  transform: translate(-50%, -50%) scale(0);
+}
+
+.mute-button.visible {
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1; 
+}

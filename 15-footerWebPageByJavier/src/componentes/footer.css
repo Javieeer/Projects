@@ -1,0 +1,46 @@
+footer {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: rgb(234, 234, 234);
+  text-align: center;
+  box-sizing: border-box; /* Asegura que el padding y el border no afectan el ancho total */
+}
+
+footer h1 {
+  margin: 0;
+  padding: 10px 0;
+}
+
+.clock1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 30px;
+}
+
+.clock2 {
+  margin: 0;
+  padding: 10px 0;
+  display: flex;
+  gap: 10px;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.social-links {
+  margin: 0;
+  padding: 30px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.social-circle {
+  margin: 0 10px; /* Espaciado entre los círculos */
+}
+
+copyright {
+  margin: 20px 0;
+  padding: 10px; /* Ajusta el padding si es necesario */
+}

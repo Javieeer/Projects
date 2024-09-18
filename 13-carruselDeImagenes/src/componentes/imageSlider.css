@@ -1,0 +1,66 @@
+.contenedorslider {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%; /* Asegúrate de que el contenedor ocupe todo el ancho disponible */
+  box-sizing: border-box; /* Incluye el padding en el ancho total del contenedor */
+}
+
+.contenedorslider .texto {
+  display: flex;
+  padding-left: 100px;
+  gap: 10px; /* Espacio entre los títulos */
+  color: black;
+}
+
+.contenedorslider .texto .complemento {
+  color: gray;
+}
+
+.slider {
+  position: relative;
+  height: 60vh;
+}
+
+.slides {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: 100%;
+  height: 100%;
+}
+
+.slide {
+  min-width: 100%;
+  height: 100%;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.slide a {
+  cursor: default;
+}
+
+/* Navegación */
+.navegacion {
+  display: flex;
+  justify-content: center;
+  padding: 10px 0;
+}
+
+.punto {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: gray;
+  margin: 0 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.punto.activo {
+  background-color: black;
+}

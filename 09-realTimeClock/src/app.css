@@ -1,0 +1,8 @@
+.clock {
+    width: 100vh;
+    height: 20vh;
+}
+
+.clock h3 {
+    margin: 0;
+}

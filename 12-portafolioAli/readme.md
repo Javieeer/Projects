@@ -1,0 +1,31 @@
+Estructura:
+Te voy a enviar la estructura de mis carpetas:
+12-portafolioAli
+>node_modules
+>public
+>>img
+>>>(Todo lo que sea imagenes)
+>>vite.svg
+>src
+>>componentes
+>>>header.css
+>>>header.jsx
+>>>MediaComponent.css
+>>>MediaComponent.jsx
+>>>selector.css
+>>>selector.jsx
+>>>users.css
+>>>users.jsx
+>>logic
+>>>users.js
+>>app.jsx
+>>app.css
+>.gitignore
+>counter.js
+>index.html
+>javascript.svg
+>main.jsx
+>package-lock.json
+>package.json
+>style.css
+>vite.config.js

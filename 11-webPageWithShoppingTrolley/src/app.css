@@ -1,0 +1,80 @@
+.productList {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.productList-body {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.productList-body-product {
+    width: 150px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgb(78, 78, 78);
+    border-radius: 15px;
+    padding: 15px;
+    button {
+        display: flex;
+        font-size: small;
+        justify-content: center;
+        align-items: center;
+        padding: 3;
+    }
+}
+
+.productList-body-product img, h4, p {
+    margin: 0;
+}
+
+.shopping {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 30px;
+}
+
+.shopping-trolley {
+    border: 1px solid white;
+    border-radius: 50%;
+    padding: 10px;
+    cursor: pointer;
+    position: relative;
+    div {
+        display: flex;
+        align-content: center;
+        justify-content: center;
+        border: 1px solid white;
+        border-radius: 50%;
+        width: 120px;
+        height: 120px;
+        background-color: white;
+        padding: 10px;
+    }
+    div img {
+        align-self: center;
+        margin-top: 10px;
+        width: 90px;
+        height: 90px;
+    }
+    .cart-count {
+        position: absolute;
+        top: -10px; /* Ajusta según sea necesario */
+        right: -10px; /* Ajusta según sea necesario */
+        background-color: red;
+        color: white;
+        border-radius: 50%;
+        width: 20px; /* O el tamaño que prefieras */
+        height: 20px; /* Igual que el ancho para hacerlo circular */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 12px; /* Ajusta el tamaño del texto según sea necesario */
+    }
+}

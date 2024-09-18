@@ -1,0 +1,152 @@
+/* Estilos del contenedor principal */
+.barranav {
+    padding: 20px 50px; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f8f8f8;
+    position: relative; 
+    z-index: 1000;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.barranav img {
+    height: 50px; 
+}
+
+/* Estilos de la barra de navegación */
+#menu ul {
+    display: flex;
+    gap: 2rem; 
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilos de la lista de opciones */
+#menu ul li {
+    position: relative;
+}
+
+/* Estilos de los links */
+#menu ul a {
+    display: block;
+    color: #000;
+    text-decoration: none;
+    font-size: 1.2em;
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    text-transform: uppercase;
+    position: relative;
+    padding: 10px; 
+}
+
+/* Efecto de subrayado */
+#menu ul a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: #000;
+    transition: width 0.3s ease;
+}
+
+#menu ul a:hover::after,
+#menu ul a.active::after {
+    width: 100%; 
+}
+
+#menu ul a.active {
+    font-weight: 600; 
+}
+
+/* Menu desplegable */
+#menu ul ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #fff; 
+    padding: 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    z-index: 1000;
+}
+
+
+#menu ul ul li {
+    width: 200px; 
+    padding: 0;
+}
+
+
+#menu ul ul a {
+    line-height: 1.5;
+    padding: 10px 15px;
+    color: #333; 
+}
+
+
+#menu ul li:hover > ul {
+    display: block;
+}
+
+/* Menu de hamburguesa */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.menu-icon {
+    width: 25px;
+    height: 3px;
+    background: #000;
+    margin: 3px 0;
+}
+
+/* Medias querys */
+@media (max-width: 768px) {
+    #menu {
+        display: none; 
+        flex-direction: column;
+        width: 100%;
+        background: #f8f8f8;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+        z-index: 1001;
+    }
+
+    #menu.open {
+        display: flex; 
+    }
+
+    #menu ul {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    #menu ul li {
+        width: 100%;
+    }
+
+    #menu ul a {
+        padding: 15px;
+        font-size: 1em;
+    }
+
+    .menu-toggle {
+        display: flex; 
+    }
+}
